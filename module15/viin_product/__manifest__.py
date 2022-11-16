@@ -78,7 +78,7 @@ Tính năng chính
 
     # always loaded
     'data': [
-        #views,
+        # views,
         'views/views.xml',
         'views/templates.xml',
         'views/viin_product_views.xml',
@@ -87,10 +87,12 @@ Tính năng chính
         'views/viin_order_views.xml',
         'views/viin_supply_views.xml',
         'views/viin_menu_views.xml',
-        #wizards,
+        # data,
+        'data/data.xml',
+        # wizards,
         'wizard/viin_product_dropout.xml',
 
-        #security,
+        # security,
         'security/product_security.xml',
         'security/ir.model.access.csv',
     ],
