@@ -7,30 +7,39 @@
 		<field name="arch" type="xml">
 			<form string="Order Form">
 				<header>
-
+					<button name="change_to_confirmed" type="object"
+						string="confrim" confirm="Are you sure you want confrim this order?" />
+					<button name="change_to_delivering" type="object"
+						string="Delivering" />
+					<button name="change_to_completed" type="object"
+						string="Complete" />
+					<button name="change_to_canceled" type="object" class  = "btn-danger"
+						string="Cancel" />
+					<field name="state" widget="statusbar" />
 				</header>
 				<sheet>
 					<group>
 						<field name="customer_id" />
 					</group>
 					<group>
-						<field name="product_ids" />
+						<field name="order_line_ids">
+							<tree editable="bottom">
+								<field name="product_id"></field>
+								<field name="number_of_products"></field>
+							</tree>
+						</field>
 					</group>
 					<group>
 						<div class="text-warning">
-
 							<group>
-								<field name="total_price"  />
+								<field name="total_price" />
 							</group>
 						</div>
 					</group>
 					<group>
 						<field name="note" />
 					</group>
-
 				</sheet>
-
-
 			</form>
 		</field>
 	</record>
@@ -41,12 +50,24 @@
 		<field name="arch" type="xml">
 			<tree string="order Tree">
 				<field name="order_code" />
+				<field name="create_date" />
+				<field name="customer_id" />
+				<field name="total_price" widget='monetary'
+					options="{'currency_field': 'currency_id'}" />
 				<field name="note" />
 			</tree>
 		</field>
 	</record>
 
-
+	<record id="viin_order_view_calendar" model="ir.ui.view">
+		<field name="model">viin.order</field>
+		<field name="arch" type="xml">
+			<calendar date_start="create_date" date_stop="create_date"
+				color="customer_id">
+				<field name="order_code" />
+				<field name="customer_id" />
+			</calendar>
+		</field>
+	</record>
 
 </odoo>
-

@@ -2,21 +2,14 @@
 
 <odoo>
 
-	
-
 	<record id="viin_product_action" model="ir.actions.act_window">
 		<field name="name">Viin product</field>
 		<field name="res_model">viin.product</field>
-		<field name="view_mode">tree,form,kanban</field>
+		<field name="view_mode">kanban,tree,graph,form</field>
 	</record>
 	<record id="viin_category_action" model="ir.actions.act_window">
 		<field name="name">Viin category</field>
 		<field name="res_model">viin.category</field>
-		<field name="view_mode">tree,form,kanban</field>
-	</record>
-	<record id="viin_attribute_action" model="ir.actions.act_window">
-		<field name="name">Viin attribute</field>
-		<field name="res_model">viin.productattribute</field>
 		<field name="view_mode">tree,form,kanban</field>
 	</record>
 	<record id="viin_supply_action" model="ir.actions.act_window">
@@ -32,14 +25,22 @@
 	<record id="viin_order_action" model="ir.actions.act_window">
 		<field name="name">Viin order</field>
 		<field name="res_model">viin.order</field>
-		<field name="view_mode">tree,form,kanban</field>
+		<field name="view_mode">tree,form,calendar,kanban</field>
 	</record>
+	<record id="viin_product_attribute_action"
+		model="ir.actions.act_window">
+		<field name="name">Viin product attribute</field>
+		<field name="res_model">viin.product.attribute</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
 
 
 	<menuitem name="Viin Product Manager"
 		id="viin_product_menu_root" />
-	<menuitem id="viin_product_menu" action="viin_product_action"
-		parent="viin_product_menu_root" name="Products" sequence="0" />
+	<menuitem id="viin_product_menu_parent"
+		action="viin_product_action" parent="viin_product_menu_root"
+		name="Products" sequence="0" />
 	<menuitem id="viin_category_menu"
 		action="viin_category_action" parent="viin_product_menu_root"
 		name="Category" sequence="1" />
@@ -50,6 +51,9 @@
 		parent="viin_product_menu_root" name="Supply" sequence="3" />
 	<menuitem id="viin_order_menu" action="viin_order_action"
 		parent="viin_product_menu_root" name="Order" sequence="4" />
-
+	<menuitem id="viin_product_menu" action="viin_product_action"
+		parent="viin_product_menu_parent" name="Products" sequence="5" />
+	<menuitem id="viin_product_attribute"
+		action="viin_product_attribute_action"
+		parent="viin_product_menu_parent" name="Attribute" sequence="6" />
 </odoo>
-

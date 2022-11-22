@@ -9,6 +9,7 @@
 			<form string="Product Form">
 				<header>
 					<button name="action_dropout" string="Dropout" type="object" />
+					<field name="sold_out" />
 
 				</header>
 				<sheet>
@@ -21,6 +22,7 @@
 									<field name="company_id" />
 									<field name="price" />
 									<field name="currency_id" />
+									<field name="rating" />
 									<field name="date_of_manufacture" />
 									<field name="expiration_date" />
 								</group>
@@ -30,7 +32,17 @@
 
 								</group>
 							</group>
-							
+
+							<group>
+								<field name="attribute_line_ids">
+									<tree editable="bottom">
+										<field name="attribute_id"></field>
+										<field name="value_ids" widget="many2many_tags"
+											options="{'no_create_edit': True}"
+											context="{'default_attribute_id': attribute_id, 'show_attribute': False}" />
+									</tree>
+								</field>
+							</group>
 							<group>
 								<field name="note" />
 							</group>
@@ -42,7 +54,7 @@
 
 						</page>
 						<page string="More Information" name="more_information">
-						<group>
+							<group>
 								<group>
 									<field name="category_ids" />
 								</group>
@@ -52,22 +64,13 @@
 							</group>
 						</page>
 					</notebook>
-
-
 				</sheet>
-				<div class="o_attachment_preview"
-					options="{types: ['image', 'pdf'], 'order': 'desc'}" />
-				<div class="oe_chatter">
-					<!-- <field name="message_follower_ids" widget="mail_followers" /> <field 
-						name="activity_ids" widget="mail_activity" /> <field name="message_ids" widget="mail_thread" 
-						/> -->
-				</div>
-
 				<field name="dropout_reason" invisible="1" />
 
 			</form>
 		</field>
 	</record>
+
 	<record id="viin_product_view_tree" model="ir.ui.view">
 		<field name="name">viin.product.tree</field>
 		<field name="model">viin.product</field>
@@ -75,11 +78,12 @@
 			<tree string="Product Tree">
 				<field name="product_code" />
 				<field name="name" />
-				<field name="price" />
+				<field name="price" widget = 'Monetary' />
 				<field name="total" />
 				<field name="expiration_date" />
 				<field name="date_of_manufacture" />
 				<field name="rating" />
+				<field name="sold_out" />
 			</tree>
 		</field>
 	</record>
@@ -93,10 +97,10 @@
 					<t t-name="kanban-box">
 
 						<div class="oe_kanban_card oe_kanban_global_click">
-							<div class="o_kanban_image mr-1">
-								<img
-									t-att-src="kanban_image('viin.product', 'image' , record.image)"
-									alt="Product" class="o_image_64_contain" />
+							<div class="o_kanban_image mr-1 ">
+								<field name="image" widget="image"
+									class="o_image_64_contain" />
+
 							</div>
 							<div class="oe_kanban_details">
 								<div class="o_kanban_record_top mb-0">
@@ -115,8 +119,10 @@
 
 								<div name="product_lst_price" class="mt-1 text-warning">
 									Price:
-									<field name="price" widget="monetary"
-										options="{'currency_field': 'currency_id', 'field_digits': True}" />
+									<i>
+										<field name="price" widget="monetary"
+											options="{'currency_field': 'currency_id', 'field_digits': True}" />
+									</i>
 								</div>
 							</div>
 						</div>
@@ -136,16 +142,26 @@
 					filter_domain="['|', ('name', 'ilike', self), ('description', 'ilike', self)]" />
 				<field name="company_id" />
 				<field name="total" />
-
-
+				<separator />
+				<filter string="State" name="sold_out"
+					domain="[('sold_out','=',True)]" />
+				<group expand="1" string="Group By">
+					<filter string="Product Type" name="sold_out"
+						context="{'group_by':'sold_out'}" />
+					<filter string="Product Category" name="category_ids"
+						context="{'group_by':'category_ids'}" />
+				</group>
 			</search>
 		</field>
 	</record>
 
-
-
-
-
-
+	<record id="viin_product_view_graph" model="ir.ui.view">
+		<field name="model">viin.product</field>
+		<field name="arch" type="xml">
+			<graph type="bar">
+				<field name="company_id" />
+			</graph>
+		</field>
+	</record>
 </odoo>
 
