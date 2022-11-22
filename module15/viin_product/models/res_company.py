@@ -6,7 +6,7 @@ from odoo import  fields, models, api
 class ResCompany(models.Model):
     _inherit = "res.company"
     
-    note = fields.Text(string = 'Note:')
+    note = fields.Text(string = 'Note')
     
     @api.model
     def create(self, vals):
