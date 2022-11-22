@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="main_product" model="viin.product">
+		<field name="name">Iphone Xs</field>
+		<field name="company_id" ref="base.main_company" />
+	</record>
+</odoo>
+
