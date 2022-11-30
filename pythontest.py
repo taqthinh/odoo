@@ -160,15 +160,14 @@ class school:
     classList: []
 
     def randomList(self):
-
-            def randomList(self):
-                if(self.total is not None):
-                    for i in range(self.total):
-                        __class = Class()
-                        __class.name = str(ranks[self.rankID]) + str(i)
-                        __class.total = random.randint(25, 40)
-                        __class.stt = i
-                        self.classList.append(__class)
+        if(self.total is not None):
+            for i in range(self.total):
+                        my_class = Class()
+                        my_class.name = str(ranks[self.rankID]) + str(i)
+                        my_class.total = random.randint(25, 40)
+                        my_class.stt = i
+                        self.classList.append(my_class)
+            
 
     
 myclass = Class()

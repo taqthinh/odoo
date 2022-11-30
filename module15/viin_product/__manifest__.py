@@ -1,11 +1,11 @@
 {
     'name': "viin_product",
-	'name_vi_VN': "viin_product",
+	'name_vi_VN': "Viin Quản lý sản phẩm",
     'summary': """
 Short (1 phrase/line) summary of the module's purpose, used as
 subtitle on modules listing or apps.openerp.com""",
     'summary_vi_VN': """
-Mô tả ngắn gọn bằng tiếng Việt (1 câu, 1 dòng) về mục đích của module
+Module quản lý sản phẩm (thêm sửa xóa sản phẩm, khách hàng, nhà cung cấp, đơn đặt hàng)
 """,
 
     'description': """
@@ -78,23 +78,24 @@ Tính năng chính
 
     # always loaded
     'data': [
+        # security,
+        'security/product_security.xml',
+        'security/ir.model.access.csv',
+        # data,
+        'data/data.xml',
         # views,
-        'views/views.xml',
-        'views/templates.xml',
         'views/viin_product_views.xml',
         'views/viin_customer_views.xml',
         'views/viin_category_views.xml',
         'views/viin_order_views.xml',
         'views/viin_supply_views.xml',
+        'views/viin_product_attribute_value_views.xml',
+        'views/viin_product_attribute_views.xml',
         'views/viin_menu_views.xml',
-        # data,
-        'data/data.xml',
         # wizards,
         'wizard/viin_product_dropout.xml',
-
-        # security,
-        'security/product_security.xml',
-        'security/ir.model.access.csv',
+        'wizard/viin_order_cancel.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [

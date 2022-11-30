@@ -1,20 +1,20 @@
 <odoo>
-	<record id="viin_product_dropout_action"
+	<record id="viin_order_cancel_action"
 		model="ir.actions.act_window">
 		<field name="name">Dropout Reason</field>
 		<field name="type">ir.actions.act_window</field>
-		<field name="res_model">viin.product.dropout</field>
+		<field name="res_model">viin.order.cancel</field>
 		<field name="view_mode">form</field>
 		<field name="target">new</field>
 	</record>
 
-	<record id="viin_product_dropout_form" model="ir.ui.view">
-		<field name="name">viin.product.dropout.form</field>
-		<field name="model">viin.product.dropout</field>
+	<record id="viin_order_cancel_form" model="ir.ui.view">
+		<field name="name">viin.order.cancel.form</field>
+		<field name="model">viin.order.cancel</field>
 		<field name="arch" type="xml">
 			<form string="Dropout Reason">
 				<group>
-					<field name="product_id" invisible="1" />
+					<field name="order_id" invisible="1" />
 					<field name="dropout_reason" />
 				</group>
 				<footer>
