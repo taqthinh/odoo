@@ -9,7 +9,7 @@
 		model="ir.module.category">
 		<field name="name">Manage product</field>
 		<field name="parent_id" ref="module_product_category" />
-		<field name="description">Helps you handle education application</field>
+		<field name="description">Helps you handle Product Manage application</field>
 		<field name="sequence">10</field>
 	</record>
 
@@ -17,7 +17,7 @@
 		<field name="name">User</field>
 		<field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
 		<field name="category_id" ref="module_product_category_user" />
-		<field name="comment">Users belong to this group can use this application
+		<field name="comment">Users belong to this group can view data in Product Manage application
 		</field>
 	</record>
 
@@ -28,7 +28,7 @@
 		<field name="category_id" ref="module_product_category_user" />
 		<field name="users"
 			eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]" />
-		<field name="comment">Users belong to this group can control this
+		<field name="comment">Users belong to this group can control Product Manage
 			application
 		</field>
 	</record>

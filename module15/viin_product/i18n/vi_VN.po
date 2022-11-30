@@ -20,7 +20,7 @@ msgstr ""
 #: code:addons/viin_product/static/src/js/sale.js:0
 #, python-format
 msgid " / Month"
-msgstr ""
+msgstr " / Tháng"
 
 #. module: viin_product
 #. openerp-web
@@ -35,56 +35,56 @@ msgstr ""
 #: code:addons/viin_product/static/src/js/tours/sale.js:0
 #, python-format
 msgid "<b>Set a price</b>."
-msgstr ""
+msgstr "<b>Điền giá</b>."
 
 #. module: viin_product
 #: model:res.groups,name:viin_product.viin_product_group_admin
 msgid "Administrator"
-msgstr ""
+msgstr "Quản trị viên"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_product__price
 msgid "Amount Paid"
-msgstr ""
+msgstr "Số tiền đã thanh toán"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_product__attach_file
 msgid "Attach files"
-msgstr ""
+msgstr "Đính kèm tệp"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_productattribute__name
 msgid "Attribute Name"
-msgstr ""
+msgstr "Tên thuộc tính"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_productattribute__value
 msgid "Attribute value"
-msgstr ""
+msgstr "Giá trị thuộc tính"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_category__attribute_ids
 msgid "Attributes"
-msgstr ""
+msgstr "Thuộc tính"
 
 #. module: viin_product
 #: model_terms:ir.ui.view,arch_db:viin_product.viin_product_dropout_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_product__category_ids
 #: model:ir.model.fields,field_description:viin_product.field_viin_productattribute__category_id
 #: model:ir.ui.menu,name:viin_product.viin_category_menu
 msgid "Category"
-msgstr ""
+msgstr "Danh mục"
 
 #. module: viin_product
 #. openerp-web
 #: code:addons/viin_product/static/src/js/tours/sale.js:0
 #, python-format
 msgid "Click here to add some products or services to your quotation."
-msgstr ""
+msgstr "Nhấp vào đây để thêm một số sản phẩm hoặc dịch vụ vào báo giá của bạn."
 
 #. module: viin_product
 #: model:ir.model,name:viin_product.model_res_company
@@ -121,7 +121,7 @@ msgstr "Tạo bởi"
 #: model:ir.model.fields,field_description:viin_product.field_viin_productattribute__create_date
 #: model:ir.model.fields,field_description:viin_product.field_viin_supply__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Ngày tạo"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_product__currency_id
@@ -148,7 +148,7 @@ msgstr "Khách hàng"
 #: code:addons/viin_product/static/src/js/tours/sale.js:0
 #, python-format
 msgid "Customize your quotes and orders."
-msgstr ""
+msgstr "Tùy chỉnh báo giá và đơn đặt hàng của bạn."
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_viin_product__date_of_manufacture
@@ -159,7 +159,7 @@ msgstr "Ngày sản xuất"
 #: code:addons/viin_product/models/viin_product.py:0
 #, python-format
 msgid "Date of Manufacture must be in the past"
-msgstr ""
+msgstr "Ngày sản xuất phải trong quá khứ"
 
 #. module: viin_product
 #: model:ir.model.fields,field_description:viin_product.field_res_company__quotation_validity_days
@@ -175,7 +175,7 @@ msgstr "Thời hạn Báo giá Mặc định (Ngày)"
 #: model:ir.model.fields,field_description:viin_product.field_viin_productattribute__display_name
 #: model:ir.model.fields,field_description:viin_product.field_viin_supply__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Tên hiển thị"
 
 #. module: viin_product
 #. openerp-web

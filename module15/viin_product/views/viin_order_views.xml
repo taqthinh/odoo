@@ -8,13 +8,14 @@
 			<form string="Order Form">
 				<header>
 					<button name="change_to_confirmed" type="object"
-						string="confrim" confirm="Are you sure you want confrim this order?" />
+						string="confrim"
+						confirm="Are you sure you want confrim this order?" />
 					<button name="change_to_delivering" type="object"
 						string="Delivering" />
 					<button name="change_to_completed" type="object"
 						string="Complete" />
-					<button name="change_to_canceled" type="object" class  = "btn-danger"
-						string="Cancel" />
+					<button name="change_to_canceled" type="object"
+						class="btn-danger" string="Cancel" />
 					<field name="state" widget="statusbar" />
 				</header>
 				<sheet>
@@ -38,6 +39,9 @@
 					</group>
 					<group>
 						<field name="note" />
+					</group>
+					<group>
+						<field name="note_uper" />
 					</group>
 				</sheet>
 			</form>

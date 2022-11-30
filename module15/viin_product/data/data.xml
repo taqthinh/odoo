@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<record id="main_product" model="viin.product">
+	<record id="product0" model="viin.product">
 		<field name="name">Iphone Xs</field>
 		<field name="company_id" ref="base.main_company" />
 	</record>
-	<record id="main_product" model="viin.product">
+	<record id="product1" model="viin.product">
 		<field name="name">Iphone Xr</field>
 		<field name="company_id" ref="base.main_company" />
 	</record>
-	<record id="main_product" model="viin.product">
+	<record id="product2" model="viin.product">
 		<field name="name">Iphone 11 prm</field>
 		<field name="company_id" ref="base.main_company" />
 	</record>

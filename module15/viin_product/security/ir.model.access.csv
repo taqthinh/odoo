@@ -1,15 +1,15 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_viin_product_user,viin.product user,model_viin_product,,1,0,0,0
 access_viin_product_admin,viin.product admin,model_viin_product,viin_product_group_admin,1,1,1,1
-access_viin_order_user,viin.order user,model_viin_order,,1,0,0,0
+access_viin_order_user,viin.order user,model_viin_order,viin_product_group_user,1,0,0,0
 access_viin_order_admin,viin.order admin,model_viin_order,viin_product_group_admin,1,1,1,1
-access_viin_order_status_user,viin.order.status user,model_viin_order_status,,1,0,0,0
+access_viin_order_status_user,viin.order.status user,model_viin_order_status,viin_product_group_user,1,0,0,0
 access_viin_order_status_admin,viin.order.status admin,model_viin_order_status,viin_product_group_admin,1,1,1,1
-access_viin_order_line_user,viin.order.line user,model_viin_order_line,,1,0,0,0
+access_viin_order_line_user,viin.order.line user,model_viin_order_line,viin_product_group_user,1,0,0,0
 access_viin_order_line_admin,viin.order.line admin,model_viin_order_line,viin_product_group_admin,1,1,1,1
-access_viin_order_cancel_user,viin.order.cancel user,model_viin_order_cancel,,1,0,0,0
+access_viin_order_cancel_user,viin.order.cancel user,model_viin_order_cancel,viin_product_group_user,1,0,0,0
 access_viin_order_cancel_admin,viin.order.cancel admin,model_viin_order_cancel,viin_product_group_admin,1,1,1,1
-access_viin_customer_user,viin.customer user,model_viin_customer,,1,0,0,0
+access_viin_customer_user,viin.customer user,model_viin_customer,viin_product_group_user,1,0,0,0
 access_viin_customer_admin,viin.customer admin,model_viin_customer,viin_product_group_admin,1,1,1,1
 access_viin_category_user,viin.category user,model_viin_category,,1,0,0,0
 access_viin_category_admin,viin.category admin,model_viin_category,viin_product_group_admin,1,1,1,1
@@ -19,3 +19,5 @@ access_viin_product_dropout_user,viin.product.dropout user,model_viin_product_dr
 access_viin_product_dropout_admin,viin.product.dropout admin,model_viin_product_dropout,viin_product_group_admin,1,1,1,1
 access_viin_product_attribute_value_user,viin.product.attribute.value user,model_viin_product_attribute_value,,1,0,0,0
 access_viin_product_attribute_value_admin,viin.product.attribute.value admin,model_viin_product_attribute_value,viin_product_group_admin,1,1,1,1
+access_viin_product_attribute_line_user,viin.product.attribute.line user,model_viin_product_attribute_line,,1,0,0,0
+access_viin_product_attribute_line_admin,viin.product.attribute.line admin,model_viin_product_attribute_line,viin_product_group_admin,1,1,1,1

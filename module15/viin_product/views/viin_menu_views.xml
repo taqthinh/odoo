@@ -11,6 +11,10 @@
 		<field name="name">Viin category</field>
 		<field name="res_model">viin.category</field>
 		<field name="view_mode">tree,form,kanban</field>
+		<field name="target">current</field>
+		<field name="context">{'lang': 'fr_FR', 'default_lang': 'fr_FR',
+                  'active_test': False, 'default_student_score':1}</field>
+
 	</record>
 	<record id="viin_supply_action" model="ir.actions.act_window">
 		<field name="name">Viin supply</field>

@@ -9,6 +9,7 @@ class ViinOrder(models.Model):
                 
     order_code = fields.Char(string = 'Order Code', readonly = True, compute = '_compute_code', store = True)
     note = fields.Text(string = 'Order note', translate = True)
+    note_uper = fields.Text(string = 'Order note uper', translate = True)
     total_price = fields.Monetary(string = 'Total price', compute = '_compute_total_price',
                      store = True,
                      compute_sudo = True)
@@ -22,7 +23,8 @@ class ViinOrder(models.Model):
                                                          ('completed', 'Completed'),
                                                          ('canceled', 'Canceled'),
                                                          ], default = 'wait_for_confirmation')
-    dropout_reason = fields.Text(string='Dropout Reason')
+    dropout_reason = fields.Text(string = 'Dropout Reason')
+
     @api.depends('order_line_ids')
     def _compute_total_price(self):
         for r in self:
@@ -33,6 +35,12 @@ class ViinOrder(models.Model):
                 r.total_price = total
             else:
                 r.total_price = 0
+
+    @api.onchange('note')
+    def _uper_note(self):
+        for r in self:
+            if r.note:
+                r.note_uper = r.note.upper()
     
     @api.depends('order_line_ids')
     def _compute_code(self):
@@ -41,7 +49,7 @@ class ViinOrder(models.Model):
         
     @api.model
     def is_allowed_state(self, current_state, new_state):
-        allowed_states = [('wait_for_confirmation', 'confirmed'),('confirmed', 'delivering'), ('delivering', 'completed'), ('wait_for_confirmation', 'canceled'), ('confirmed', 'canceled')]
+        allowed_states = [('wait_for_confirmation', 'confirmed'), ('confirmed', 'delivering'), ('delivering', 'completed'), ('wait_for_confirmation', 'canceled'), ('confirmed', 'canceled')]
         return (current_state, new_state) in allowed_states
     
     def change_state(self, state):

@@ -75,10 +75,11 @@
 		<field name="name">viin.product.tree</field>
 		<field name="model">viin.product</field>
 		<field name="arch" type="xml">
-			<tree string="Product Tree">
+			<tree string="Product Tree" editable='bottom'>
 				<field name="product_code" />
 				<field name="name" />
-				<field name="price" widget = 'Monetary' />
+				<field name="test_context" />
+				<field name="price" widget='Monetary' />
 				<field name="total" />
 				<field name="expiration_date" />
 				<field name="date_of_manufacture" />
